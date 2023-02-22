@@ -18,7 +18,7 @@ export default function ThirdwebGuideFooter() {
         role="button"
         onClick={() =>
           window.open(
-            "https://github.com/thirdweb-example/nft-gated-website",
+            "https://github.com/ryunoesta/portfolio-view-site.git",
             "_blank"
           )
         }
@@ -39,7 +39,7 @@ export default function ThirdwebGuideFooter() {
           style={{ cursor: "pointer" }}
           onClick={() =>
             window.open(
-              "https://github.com/thirdweb-example/nft-gated-website",
+              "https://github.com/ryunoesta/portfolio-view-site.git",
               "_blank"
             )
           }
