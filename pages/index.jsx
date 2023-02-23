@@ -6,19 +6,6 @@ import checkBalance from "../util/checkBalance";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 
-// export default function MyComponent() {
-//   const [isLoggedIn, setIsLoggedIn ] = useState(false);
-//   const router = useRouter();
-
-//   const prevIsLoggedInRef = useRef(isLoggedIn);
-
-//   useEffect(() => {
-//     if (prevIsLoggedInRef.current === false && isLoggedIn === true){
-//       router.push('/');
-//     }
-//   prevIsLoggedInRef.current = isLoggedIn;
-//   }, [isLoading, isLoggedIn, router]);
-
 export default function Home() {
   const { logout } = useLogout();
   const { isLoggedIn, isLoading } = useUser();
