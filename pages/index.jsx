@@ -19,7 +19,6 @@ import { useRouter } from "next/router";
 //   prevIsLoggedInRef.current = isLoggedIn;
 //   }, [isLoading, isLoggedIn, router]);
 
-
 export default function Home() {
   const { logout } = useLogout();
   const { isLoggedIn, isLoading } = useUser();

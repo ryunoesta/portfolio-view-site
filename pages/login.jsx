@@ -3,6 +3,9 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { useContract, useNFT, ThirdwebNftMedia } from "@thirdweb-dev/react";
 import Image from 'next/image';
+import { useUser } from "@thirdweb-dev/react";
+import { useRouter } from "next/router";
+import { useEffect, useRef } from "react";
 
 // replace this with your contract address
 const contractAddress = "0xBd14EF16e84e8c6000ea01bF5Ceb9cEfF34D3022";
@@ -13,6 +16,18 @@ export default function Login() {
   const {contract} = useContract("0xBd14EF16e84e8c6000ea01bF5Ceb9cEfF34D3022");
 
   const {data: nft, isloading} =useNFT(contract, 0);
+
+  const { isLoggedIn } = useUser();
+  const router = useRouter();
+    
+      const prevIsLoggedInRef = useRef(isLoggedIn);
+    
+      useEffect(() => {
+        if (prevIsLoggedInRef.current === false && isLoggedIn === true){
+          router.push('/');
+        }
+      prevIsLoggedInRef.current = isLoggedIn;
+      }, [isLoggedIn, router]);
 
   return (
     <div className={styles.container}>
